@@ -8,7 +8,7 @@ namespace DAL
 {
     /// <summary>
     ///Currently, the factory method only brings the object to realization by using lists ,
-    ///below we will add the realization of the xml files
+    ///below we will add the realization of the xml files.
     /// </summary>
     public class Factory
     {
