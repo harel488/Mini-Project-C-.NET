@@ -1,0 +1,101 @@
+﻿<Page x:Class="PLWPF.HostRegister"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PLWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HostRegister" Height="486.804" Width="718.561">
+    <Page.Resources>
+
+    </Page.Resources>
+    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="487"  VerticalAlignment="Center" Width="709" Margin="0,0,9.4,0.2">
+        <Grid Margin="9.2,9.2,9,8.6">
+            <Button x:Name="finish" Style="{StaticResource ButtonTemplate}" Content="" HorizontalAlignment="Left" Margin="10,407,0,0" VerticalAlignment="Top" Width="143" Height="50" Click="Finish_Click"/>
+            <Image Margin="0,0,623,396" Source="myLogo.png" Stretch="Fill" />
+            <GroupBox x:Name="hostDetails" FlowDirection="RightToLeft"  Header="פרטי המארח" BorderThickness="3" BorderBrush="CornflowerBlue" FontWeight="Bold" Margin="371,10,10,182">
+                <Grid Margin="10,10,-12.8,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="141*"/>
+                        <ColumnDefinition Width="157*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="40*"/>
+
+                    </Grid.RowDefinitions>
+                    <Label Content="מספר מארח" HorizontalAlignment="Left" Margin="17,2,0,6.4" FontWeight="Bold" Width="104"/>
+                    <Label Content="שם פרטי" HorizontalAlignment="Left" Height="28" Margin="17,36,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="59"/>
+                    <Label Content="שם משפחה" HorizontalAlignment="Left" Height="29" Margin="17,37.6,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="2" Width="74"/>
+                    <Label Content="מספר טלפון" HorizontalAlignment="Left" Margin="17,0.8,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="77"/>
+                    <Label Content="כתובת מייל" HorizontalAlignment="Left" Margin="17,9.4,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="72"/>
+                    <TextBox x:Name="keyTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.2,3,0,0" TextWrapping="Wrap" Text="{Binding Path=HostKey}" PreviewTextInput="ValidationNumbers_PreviewTextInput"  VerticalAlignment="Top" Width="98"/>
+                    <TextBox x:Name="nameTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.2,6.6,0,0" TextWrapping="Wrap" Text="{Binding Path=PrivateName}" PreviewTextInput="ValidationLetters_PreviewTextInput" VerticalAlignment="Top" Width="99" Grid.Row="1"/>
+                    <TextBox x:Name="familyTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.2,9.2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=FamilyName}" PreviewTextInput="ValidationLetters_PreviewTextInput" VerticalAlignment="Top" Width="99"/>
+                    <TextBox x:Name="phoneTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.2,10.8,0,0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=PhoneNumber}" PreviewTextInput="ValidationNumbers_PreviewTextInput" VerticalAlignment="Top" Width="98"/>
+                    <TextBox x:Name="mailTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.2,10.4,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Path=MailAddress}" VerticalAlignment="Top" Width="98"/>
+                    <Label Content="מס חשבון בנק" HorizontalAlignment="Left" Margin="17,9,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+                    <TextBox x:Name="numAcountTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.2,13,0,0" Grid.Row="5" TextWrapping="Wrap" Text="{Binding Path=BankAccountNumber}" PreviewTextInput="ValidationNumbers_PreviewTextInput" VerticalAlignment="Top" Width="98"/>
+
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="BankDetails" FlowDirection="RightToLeft"  Header="פרטי הבנק" BorderThickness="3" BorderBrush="CornflowerBlue" FontWeight="Bold" Margin="374,285,10,67">
+                <Grid Margin="10,10,-12.4,0.4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="71*"/>
+                        <RowDefinition Height="72*"/>
+
+
+
+                    </Grid.RowDefinitions>
+                    <Label Content="מספר בנק" HorizontalAlignment="Left" Margin="10,9.8,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="66"/>
+                    <Label Content="מספר סניף" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="70"/>
+                    <TextBox x:Name="numBankTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.4,8.8,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=BankNumber}" PreviewTextInput="ValidationNumbers_PreviewTextInput" VerticalAlignment="Top" Width="70"/>
+                    <TextBox x:Name="numBranchTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.4,13,0,0" TextWrapping="Wrap" Text="{Binding Path=BranchNumber}" PreviewTextInput="ValidationNumbers_PreviewTextInput" VerticalAlignment="Top" Width="70"/>
+
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="UnitDetails" FlowDirection="RightToLeft"  Header="פרטי היחידה" BorderThickness="3" BorderBrush="CornflowerBlue" FontWeight="Bold" Margin="86,10,339,281">
+                <Grid Margin="10,10,-12.8,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+
+                    </Grid.RowDefinitions>
+                    <Label Content="שם יחידת אירוח" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="סוג היחידה" HorizontalAlignment="Left" Margin="10,7.2,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.033,0.82"/>
+                    <Label Content="איזור" HorizontalAlignment="Left" Margin="10,6.4,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                    <TextBox x:Name="nameUnitTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.8,10,0,0" TextWrapping="Wrap" Text="{Binding Path=HostingUnitName}"  VerticalAlignment="Top" Width="86"/>
+                    <ComboBox x:Name="typeCB" Grid.Column="1" HorizontalAlignment="Left" Margin="9.6,10.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="86" SelectedItem="{Binding Path=Type}"/>
+                    <ComboBox x:Name="areaCB" Grid.Column="1" HorizontalAlignment="Left" Margin="9.6,1.4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" SelectedItem="{Binding Path=Area}"/>
+                    <Label Content="מחיר" HorizontalAlignment="Left" Margin="10,1,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+                    <TextBox x:Name="priceTB" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="9.8,3,0,0" TextWrapping="Wrap" Text="{Binding Path=Price}"  VerticalAlignment="Top" Width="86" Grid.Row="3" PreviewTextInput="ValidationNumbers_PreviewTextInput"/>
+
+                </Grid>
+            </GroupBox>
+            <Grid.Background >
+                <ImageBrush  ImageSource="back.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+
+
+
+
+
+        </Grid>
+    </Border>
+</Page>
